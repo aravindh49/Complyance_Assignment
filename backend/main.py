@@ -5,6 +5,7 @@ from typing import List
 
 from . import crud, models, schemas, calculations, report_generator
 from .database import SessionLocal, engine
+import logging
 
 # Create all database tables
 models.Base.metadata.create_all(bind=engine)
@@ -15,10 +16,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "null",  # To allow requests from file:// URLs
+]
+
 # Add CORS middleware to allow cross-origin requests from the frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins, suitable for local development
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
     allow_headers=["*"],  # Allows all headers
@@ -87,5 +94,5 @@ def generate_report(report_request: schemas.ReportRequest, db: Session = Depends
             "file_path": file_path
         }
     except Exception as e:
-        # Log the exception e
-        raise HTTPException(status_code=500, detail=f"Failed to generate PDF report: {str(e)}")
+        logging.error(f"Failed to generate PDF report for scenario {report_request.scenario_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="An unexpected error occurred while generating the PDF report.")
