@@ -1,89 +1,22 @@
 # Complyance_Assignment
 Created for 3rd round process of complyance
 
+## Tech Stack
 
-# Invoicing ROI Simulator
+This project is built with the following technologies:
 
-A lightweight ROI calculator that helps users visualize the cost savings and payback period when switching from manual to automated invoicing. This project was built as a rapid prototype to demonstrate the value of automation.
+### Backend
 
- <!-- Replace with a real screenshot URL -->
+*   **Python:** The core programming language for the backend logic.
+*   **FastAPI:** A modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints.
+*   **Uvicorn:** An ASGI (Asynchronous Server Gateway Interface) server, used to run the FastAPI application.
+*   **SQLAlchemy:** A SQL toolkit and Object-Relational Mapper (ORM) that gives application developers the full power and flexibility of SQL. It is used here to interact with the SQLite database.
+*   **SQLite:** A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. It's used to store simulation scenarios.
+*   **Pydantic:** A library for data validation and settings management using Python type annotations. It's used in FastAPI to define the structure of the data sent to and from the API.
+*   **ReportLab:** A library for creating PDF documents from Python. It's used to generate the ROI reports.
 
-##  Purpose
+### Frontend
 
-The goal of this application is to provide a simple, interactive tool for potential customers. By entering a few key business metrics, users can instantly see the financial benefits of adopting an automated invoicing solution. The calculator is intentionally designed with a "bias factor" to ensure the results always highlight a positive return on investment.
-
-##  Features
-
--   **Instant Simulation:** An interactive form provides real-time calculations for monthly savings, total ROI, and payback period.
--   **Scenario Management:** Users can name and save their simulations for future reference. Saved scenarios can be loaded or deleted.
--   **Gated Report Generation:** Users can download a summary of their simulation as a PDF report after providing an email address for lead capture.
--   **RESTful API:** A clean backend API handles all calculations and data persistence.
-
-##  Tech Stack
-
--   **Backend:** Node.js, Express.js
--   **Database:** SQLite
--   **Frontend:** HTML, CSS, Vanilla JavaScript
--   **PDF Generation:** `html-pdf`
-
-##  Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-You need to have Node.js (which includes npm) installed on your system.
-
-### Installation & Setup
-
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/aravindh49/Complyance_Assignment.git
-    cd Complyance_Assignment
-    ```
-
-2.  **Install backend dependencies:**
-    Navigate to the backend directory and install the required npm packages.
-    ```sh
-    cd backend
-    npm install
-    ```
-
-### Running the Application
-
-1.  **Start the backend server:**
-    From the `backend` directory, run the following command. The server will start on `http://localhost:3000`.
-    ```sh
-    node server.js
-    ```
-
-2.  **Launch the frontend:**
-    Open the `frontend/index.html` file directly in your web browser. The application is now ready to use!
-
-## How to Test
-
-1.  **Test Quick Simulation:**
-    -   Enter values into the input fields (e.g., 2000 invoices, 3 staff, $30 wage).
-    -   Verify that the "Live Results" section updates instantly.
-
-2.  **Test Scenario Management:**
-    -   After running a simulation, enter a name in the "Scenario Name" field and click "Save Scenario."
-    -   Verify that the scenario appears in the "Saved Scenarios" list.
-    -   Click "Load" to populate the form with its data.
-    -   Click "Delete" to remove a scenario.
-
-3.  **Test Report Generation:**
-    -   Click the "Download Report" button.
-    -   Enter an email in the modal that appears and click "Generate."
-    -   A PDF file should be downloaded by your browser.
-
-##  API Endpoints
-
-| Method | Endpoint             | Description                                          |
-| :----- | :------------------- | :--------------------------------------------------- |
-| `POST` | `/simulate`          | Runs a simulation and returns JSON results.          |
-| `POST` | `/scenarios`         | Saves a named scenario with its inputs.              |
-| `GET`  | `/scenarios`         | Retrieves a list of all saved scenarios.             |
-| `GET`  | `/scenarios/:id`     | Retrieves the details of a single scenario by its ID.|
-| `DELETE`| `/scenarios/:id`    | Deletes a scenario by its ID.                        |
-| `POST` | `/report/generate`   | Generates and returns a PDF report (requires email). |
+*   **HTML:** The standard markup language for creating web pages and web applications.
+*   **CSS:** A style sheet language used for describing the presentation of a document written in a markup language like HTML.
+*   **JavaScript:** A high-level, interpreted programming language that conforms to the ECMAScript specification. It is used for the client-side logic and interactivity of the web application.
