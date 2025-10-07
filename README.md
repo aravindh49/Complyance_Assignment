@@ -5,18 +5,19 @@ Created for 3rd round process of complyance
 
 This project is built with the following technologies:
 
-### Backend
+# Invoicing ROI Simulator
 
-*   **Python:** The core programming language for the backend logic.
-*   **FastAPI:** A modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints.
-*   **Uvicorn:** An ASGI (Asynchronous Server Gateway Interface) server, used to run the FastAPI application.
-*   **SQLAlchemy:** A SQL toolkit and Object-Relational Mapper (ORM) that gives application developers the full power and flexibility of SQL. It is used here to interact with the SQLite database.
-*   **SQLite:** A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. It's used to store simulation scenarios.
-*   **Pydantic:** A library for data validation and settings management using Python type annotations. It's used in FastAPI to define the structure of the data sent to and from the API.
-*   **ReportLab:** A library for creating PDF documents from Python. It's used to generate the ROI reports.
+This is a full-stack web application that helps users simulate the Return on Investment (ROI), potential savings, and payback period of switching from a manual to an automated invoicing system.
 
-### Frontend
+The application allows users to input their current invoicing metrics, run a simulation, view the results, save different scenarios, and generate a PDF report for a saved scenario.
 
-*   **HTML:** The standard markup language for creating web pages and web applications.
-*   **CSS:** A style sheet language used for describing the presentation of a document written in a markup language like HTML.
-*   **JavaScript:** A high-level, interpreted programming language that conforms to the ECMAScript specification. It is used for the client-side logic and interactivity of the web application.
+## Tech Stack
+
+-   **Backend**: Python with [FastAPI](https://fastapi.tiangolo.com/) for the web framework.
+-   **Database**: [SQLite](https://www.sqlite.org/index.html) for simple, file-based storage.
+-   **ORM**: [SQLAlchemy](https://www.sqlalchemy.org/) for database interaction and modeling.
+-   **Data Validation**: [Pydantic](https://docs.pydantic.dev/latest/) for robust data validation and settings management in FastAPI.
+-   **PDF Generation**: [ReportLab](https://www.reportlab.com/opensource/) for creating dynamic PDF reports from simulation data.
+-   **Frontend**: Plain HTML, CSS, and Vanilla JavaScript (ES6+).
+-   **UI Framework**: [Bootstrap 5](https://getbootstrap.com/) for a responsive and clean user interface.
+-   **Web Server**: [Uvicorn](https://www.uvicorn.org/) as the ASGI server to run the FastAPI application.
