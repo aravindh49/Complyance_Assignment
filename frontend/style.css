@@ -1,0 +1,40 @@
+body {
+    background-color: #f8f9fa;
+}
+
+header h1 {
+    color: #343a40;
+}
+
+.results-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.result-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.result-item h4 {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.result-item p {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+#roi_percentage, #monthly_savings {
+    color: #198754; /* Bootstrap success color */
+}
